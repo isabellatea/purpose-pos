@@ -1,10 +1,4 @@
-
-
-
 import React from 'react';
-
-
-
 
 class CheckoutItem extends React.Component {
   render() {

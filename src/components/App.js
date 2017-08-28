@@ -18,6 +18,7 @@ class App extends Component {
     this.addToCheckout = this.addToCheckout.bind(this);
     this.loadSamplePuppies = this.loadSamplePuppies.bind(this);
     this.removeFromCheckout = this.removeFromCheckout.bind(this);
+    this.addItem = this.addItem.bind(this);
 
   }
   
@@ -37,13 +38,20 @@ class App extends Component {
     this.setState({checkout: checkout})
   }
 
+  addItem(item) {
+    const items = {...this.state.items};
+    const timestamp = Date.now();
+    items[`item-${timestamp}`] = item;
+    this.setState({items: items})
+  }
+
 
   render() {
     return (
       <div>
       <Header />
         <div className="flex-container">
-          <Inventory items={this.state.items} addToCheckout={this.addToCheckout} loadSamplePuppies={this.loadSamplePuppies}/>
+          <Inventory items={this.state.items} addToCheckout={this.addToCheckout} loadSamplePuppies={this.loadSamplePuppies} addItem={this.addItem}/>
           <Checkout items={this.state.checkout} removeFromCheckout={this.removeFromCheckout} />
         </div>
       </div>

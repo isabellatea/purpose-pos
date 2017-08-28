@@ -19,14 +19,14 @@ class Inventory extends React.Component {
 		          </h3>
 		          <SkyLight hideOnOverlayClicked ref="simpleDialog">
 
-          			<AddItemForm />
+          			<AddItemForm addItem={this.props.addItem}/>
        			  </SkyLight>
 
 		  		</li>
 		  		<li className="inventory-item">
 		          <img src='https://openclipart.org/image/2400px/svg_to_png/218242/1430954247.png' alt="addSamplePuppies" onClick={this.props.loadSamplePuppies}/>
 		          <h3 className="item-name">
-		          	Add Samples
+		          	Load Samples
 		          </h3>
 
 		  		</li>

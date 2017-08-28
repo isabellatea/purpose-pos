@@ -57,6 +57,13 @@ module.exports = {
     price: 250,
     status: 'available'
   },
+    pup10: {
+    name: 'Beast Mode',
+    image: 'https://img.buzzfeed.com/buzzfeed-static/static/2017-01/31/16/asset/buzzfeed-prod-fastlane-01/sub-buzz-29032-1485899452-1.jpg',
+    desc: 'I\m definitely the best guard dog around! Adopt me yay! Pretty please..?',
+    price: 52,
+    status: 'available'
+  },
      pup7: {
     name: 'White Walker',
     image: 'https://s-media-cache-ak0.pinimg.com/736x/0f/49/e3/0f49e3e4b843aa37aa818a79355f40f7--white-miniature-schnauzer-miniature-schnauzer-puppies.jpg',
@@ -64,4 +71,6 @@ module.exports = {
     price: 5,
     status: 'available'
   }
+
+
 };
