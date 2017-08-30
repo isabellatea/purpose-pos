@@ -10,8 +10,7 @@ class Item extends React.Component {
         <img src={details.image} alt="item" />
         <h3 className="item-name"> {details.name} </h3>
         <p>{details.desc}</p>
-        <span className="itemPrice">{"$" + details.price}</span>
-
+        <span className="item-price">{"$" + details.price}</span>
         <button className ="addButton" type="button" disabled={!available} onClick={() => this.props.addToCheckout(index)}>{ buttonText }</button>
    
   	  </li>

@@ -6,7 +6,7 @@ class CheckoutItem extends React.Component {
     return (
       <li className="checkout-item" onClick={() => this.props.removeFromCheckout(index)}>
         <img src={details.image} alt="puppy"/>
-        <span className="checkoutItemPrice">{"$" + details.price}</span>
+        <span className="checkout-price">{"$" + details.price}</span>
         <h3 className="item-name">{details.name}</h3>
         <p>{details.desc}</p>
       </li>

@@ -40,11 +40,11 @@ ul {
   vertical-align: middle;
   float: right;
   margin-top: 2px;
-  background-color: rgba(255, 255, 255, 0.18);
+  background-color: rgba(255, 255, 255, 0.12);
 }
 
 .header .navitem:hover {
-  background-color: gray;
+  background-color: rgba(151, 77, 176, .45);
 
 }
 
@@ -92,8 +92,12 @@ ul {
   -webkit-transition:1s;
 }
 
-.itemPrice {
+.item-price {
+  font-weight: bold;
+  font-size: 22px;
+  margin-right: 5px;
   float: left;
+  color: #468c00;
 }
 
 .item-name {
@@ -215,12 +219,69 @@ button[disabled], button[disabled]:hover {
   margin: 0px;
 }
 
-.checkoutItemPrice, .itemPrice {
+.checkout-price {
   font-weight: bold;
   font-size: 22px;
   margin-right: 5px;
   float: right;
   color: #468c00;
+}
+
+.coupon-code {
+  display: inline-block;
+  background-color: rgba(255, 255, 255, 0.6);
+  margin-top: 12px;
+  margin-left: 0px;
+  width: 100%;
+
+}
+
+.coupon-title {
+  margin-left: 35px;
+  font-weight: bold;
+}
+
+.coupon-code form {
+  width  : 100%;
+  display: inline-block;
+  margin-top: 2px;
+}
+
+.coupon-code input[type=text]{
+  border: 1px dotted #999;
+  border-radius: 0;
+  width: 50%;
+  -webkit-appearance: none;
+  display: inline-block;
+  margin-bottom: 10px;
+  margin-left: 0px;
+}
+
+.coupon-code button {
+  border-top: 1px solid #f2f5f7;
+  background: #974db0;
+  background: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#000000));
+  background: -webkit-linear-gradient(top, #7d3e9c, #974db0);
+  background: -moz-linear-gradient(top, #7d3e9c, #974db0);
+  background: -ms-linear-gradient(top, #7d3e9c, #974db0);
+  background: -o-linear-gradient(top, #7d3e9c, #974db0);
+  padding: 6px 15px;
+  margin-bottom: 10px;
+  margin-left: 13px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+  -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
+  -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
+  box-shadow: rgba(0,0,0,1) 0 1px 0;
+  text-shadow: rgba(0,0,0,.4) 0 1px 0;
+  color: white;
+  font-size: 13px;
+  font-weight: bold;
+  font-family: Helvetica, Arial, Sans-Serif;
+  text-decoration: none;
+
+
 }
 
 .infobox h3 {

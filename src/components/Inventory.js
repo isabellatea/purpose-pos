@@ -25,11 +25,7 @@ class Inventory extends React.Component {
           	  <AddItemForm addItem={this.props.addItem} modal={this.hideModal}/>
        		</SkyLight>
 		  </li>
-		  
-		  <li className="inventory-item">
-		    <img src='https://openclipart.org/image/2400px/svg_to_png/218242/1430954247.png' alt="addSamplePuppies" onClick={this.props.loadSampleData}/>
-		    <h3 className="item-name"> Load Sample Data </h3>
-		  </li>
+
 	    </ul>
       </div>
 	)

@@ -45,12 +45,20 @@ class App extends Component {
     this.setState({items: items, checkout: {}})
   }
 
+  restock = () => {
+    const items = {...this.state.items};
+    for (var key in this.state.items) {
+      items[key].status = 'available';
+    }
+    this.setState({items: items, checkout: {}})
+  }
+
 
 
   render() {
     return (
       <div>
-      <Header items={this.state.items} addItem={this.addItem} loadSampleData={this.loadSampleData} />
+      <Header items={this.state.items} addItem={this.addItem} loadSampleData={this.loadSampleData} restock={this.restock}/>
         <div className="flex-container">
           <Inventory items={this.state.items} addToCheckout={this.addToCheckout} loadSampleData={this.loadSampleData} addItem={this.addItem}/>
           <Checkout items={this.state.checkout} removeFromCheckout={this.removeFromCheckout} payAndUpdate={this.payAndUpdate}/>
