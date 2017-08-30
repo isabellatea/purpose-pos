@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "flex.box": "^3.4.3",
+    "materialize-css": "^0.100.2",
     "react": "^15.6.1",
     "react-bootstrap": "^0.31.2",
     "react-dom": "^15.6.1",

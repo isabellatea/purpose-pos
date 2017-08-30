@@ -14,7 +14,7 @@ class App extends Component {
     };
   }
   
-  loadSamplePuppies = () => {
+  loadSampleData = () => {
     this.setState({items: sampleItems})
   }
 
@@ -37,7 +37,7 @@ class App extends Component {
     this.setState({items: items})
   }
 
-  payAndUpdate = (checkoutItems) => {
+  payAndUpdate = () => {
     const items = {...this.state.items};
     for (var key in this.state.checkout) {
       items[key].status = 'outofStock';
@@ -45,12 +45,14 @@ class App extends Component {
     this.setState({items: items, checkout: {}})
   }
 
+
+
   render() {
     return (
       <div>
-      <Header />
+      <Header items={this.state.items} addItem={this.addItem} loadSampleData={this.loadSampleData} />
         <div className="flex-container">
-          <Inventory items={this.state.items} addToCheckout={this.addToCheckout} loadSamplePuppies={this.loadSamplePuppies} addItem={this.addItem}/>
+          <Inventory items={this.state.items} addToCheckout={this.addToCheckout} loadSampleData={this.loadSampleData} addItem={this.addItem}/>
           <Checkout items={this.state.checkout} removeFromCheckout={this.removeFromCheckout} payAndUpdate={this.payAndUpdate}/>
         </div>
       </div>

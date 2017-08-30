@@ -13,7 +13,7 @@ class Checkout extends React.Component {
 	  <div className="checkout">
 		<div className="infobox flex-container">
 		  <h3>Total: ${total}</h3>
-		  <h4 onClick={() => this.props.payAndUpdate()}>Buy</h4>
+		  <h4 onClick={() => this.props.payAndUpdate()}>Pay</h4>
 		</div>
 		<ul>
 	      {Object.keys(this.props.items)

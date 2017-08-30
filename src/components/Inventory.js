@@ -4,6 +4,7 @@ import SkyLight from 'react-skylight';
 import AddItemForm from './AddItemForm';
 
 
+
 class Inventory extends React.Component {
 
   hideModal=() => {
@@ -21,12 +22,12 @@ class Inventory extends React.Component {
 		    <img src='https://openclipart.org/image/2400px/svg_to_png/218242/1430954247.png' alt="addItem" onClick={() => this.modal.show()}/>
 		    <h3 className="item-name"> Add New Item </h3>
 		    <SkyLight hideOnOverlayClicked ref={(modal) => this.modal = modal}>
-          	  <AddItemForm addItem={this.props.addItem} modal={this.hideModal} fakeProp={'fakeProp'}/>
+          	  <AddItemForm addItem={this.props.addItem} modal={this.hideModal}/>
        		</SkyLight>
 		  </li>
 		  
-		  <li className="inventory-item" onClick={this.itemTransition}>
-		    <img src='https://openclipart.org/image/2400px/svg_to_png/218242/1430954247.png' alt="addSamplePuppies" onClick={this.props.loadSamplePuppies}/>
+		  <li className="inventory-item">
+		    <img src='https://openclipart.org/image/2400px/svg_to_png/218242/1430954247.png' alt="addSamplePuppies" onClick={this.props.loadSampleData}/>
 		    <h3 className="item-name"> Load Sample Data </h3>
 		  </li>
 	    </ul>
