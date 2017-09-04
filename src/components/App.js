@@ -53,12 +53,34 @@ class App extends Component {
     this.setState({items: items, checkout: {}})
   }
 
+  sortByAvailable = () => {
+    const items = {...this.state.items};
+    const arrayOfItems = [];
+    for (var key in items) {
+      arrayOfItems.push(items[key]);
+    }
+    
+    const arrangeBy = function() {
+      return function(a, b) {
+        if(a['name'] < b['name']){
+            return -1;
+        }else if(a['name'] > b['name']){
+            return 1;
+        }else{
+            return 0;   
+        }
+      }
+    }
+    console.log(items);
+    console.log(arrayOfItems);
+    console.log(arrayOfItems.sort(arrangeBy()));
+  }
 
 
   render() {
     return (
       <div>
-      <Header items={this.state.items} addItem={this.addItem} loadSampleData={this.loadSampleData} restock={this.restock}/>
+      <Header items={this.state.items} addItem={this.addItem} loadSampleData={this.loadSampleData} restock={this.restock} sortByAvailable={this.sortByAvailable}/>
         <div className="flex-container">
           <Inventory items={this.state.items} addToCheckout={this.addToCheckout} loadSampleData={this.loadSampleData} addItem={this.addItem}/>
           <Checkout items={this.state.checkout} removeFromCheckout={this.removeFromCheckout} payAndUpdate={this.payAndUpdate}/>

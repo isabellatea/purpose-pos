@@ -12,6 +12,10 @@ class Inventory extends React.Component {
   }
 
   render() {
+  	const modalStyle = {
+      color: '#000000',
+      height: '44%'
+    };
 	return (
 	  <div className="inventory">
 	    <ul>
@@ -21,7 +25,7 @@ class Inventory extends React.Component {
 	      <li className="inventory-item">
 		    <img src='https://openclipart.org/image/2400px/svg_to_png/218242/1430954247.png' alt="addItem" onClick={() => this.modal.show()}/>
 		    <h3 className="item-name"> Add New Item </h3>
-		    <SkyLight hideOnOverlayClicked ref={(modal) => this.modal = modal}>
+		    <SkyLight dialogStyles={modalStyle} hideOnOverlayClicked ref={(modal) => this.modal = modal}>
           	  <AddItemForm addItem={this.props.addItem} modal={this.hideModal}/>
        		</SkyLight>
 		  </li>

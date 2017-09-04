@@ -1,10 +1,10 @@
 module.exports = {
    pup1: {
     name: 'Dolly Spotterton',
-    image: 'https://i.pinimg.com/736x/64/8e/3f/648e3f18a32ea49904cc7cbf982d036e--dalmatian-puppies-white-style.jpg',
+    image: 'https://tinyurl.com/y6v7y3la',
     desc: 'Save me from my other 100 brothers and sisters. There\'s no way my owner can feed all 101 of us!',
     price: 5,
-    status: 'available'
+    status: 'available',
   },
    pup2: {
     name: 'Roxy Boxy',

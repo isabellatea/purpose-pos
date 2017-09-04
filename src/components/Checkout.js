@@ -25,6 +25,7 @@ class Checkout extends React.Component {
 		  <h4 onClick={() => this.props.payAndUpdate()}>Pay</h4>
 		</div>
 
+
 		<ul>
 	      {Object.keys(this.props.items)
 	        .map(key => <CheckoutItem key={key} index={key} details={this.props.items[key]} removeFromCheckout={this.props.removeFromCheckout}/>)} 

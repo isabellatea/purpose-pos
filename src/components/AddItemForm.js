@@ -8,7 +8,7 @@ class AddItemForm extends React.Component {
 	    price: this.price.value,
 	    status: this.status.value,
 	    desc: this.desc.value,
-	    image: this.image.value
+	    image: this.image.value,
 	  }
 		this.props.addItem(item);
 		this.addItemForm.reset();
@@ -24,7 +24,6 @@ class AddItemForm extends React.Component {
 			Item Price: <input ref={(input) => this.price = input} type="text" />
 			Description: <textarea ref={(input) => this.desc = input}></textarea>
 			Photo URL: <input ref={(input) => this.image = input} type="text"/>
-			
 			<button type="submit" className="modalButton" data-dismiss="modal">Add Item</button>
 			Status:
 			<select ref={(input) => this.status = input}>
