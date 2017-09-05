@@ -14,7 +14,7 @@ class Inventory extends React.Component {
   render() {
   	const modalStyle = {
       color: '#000000',
-      height: '44%'
+      height: 'auto'
     };
 	return (
 	  <div className="inventory">

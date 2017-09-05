@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import '../css/style.css';
 import Checkout from './Checkout';
-import sampleItems from '../sample-items'
+// import sampleItems from '../sample-items'
 import Header from './Header';
 import Inventory from './Inventory';
 
@@ -15,7 +15,15 @@ class App extends Component {
   }
   
   loadSampleData = () => {
-    this.setState({items: sampleItems})
+    // this.setState({items: sampleItems})
+    fetch('/getAll').then((response) => response.json())
+    .then((items) => {
+      const sampleItems = items.reduce((prev, current) => {
+        prev[current.id] = current;
+        return prev;
+      }, {});
+      this.setState({ items: sampleItems });
+    })
   }
 
   addToCheckout = (key) => {
@@ -35,6 +43,17 @@ class App extends Component {
     const timestamp = Date.now();
     items[`item-${timestamp}`] = item;
     this.setState({items: items})
+    this.addItemToDb(item); // send to db
+  }
+
+  addItemToDb = (item) => {
+    fetch('/addItem', {
+      method: 'POST',
+      body: JSON.stringify(item)
+    })
+    .then((response) => {
+      console.log(response);
+    });
   }
 
   payAndUpdate = () => {
