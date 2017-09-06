@@ -9,10 +9,10 @@ class Item extends React.Component {
   	  <li className="inventory-item">
         <img src={details.img_url} alt="item" />
         <h3 className="item-name"> {details.name} </h3>
-        <p>{details.description}</p>
-        <span className="item-price">{"$" + details.price}</span>
-        <button className ="addButton" type="button" disabled={!available} onClick={() => this.props.addToCheckout(index)}>{ buttonText }</button>
-   
+        <p>{details.description}</p> 
+        <button className ="deleteButton" type="button" onClick={() => this.props.deleteItem(details)}>X</button>
+        <span className="item-price">{"$" + details.price}</span> <button className ="addButton" type="button" disabled={!available} onClick={() => this.props.addToCheckout(index)}>{ buttonText }</button>
+
   	  </li>
   	) 
   }

@@ -127,7 +127,7 @@ img {
   background: -moz-linear-gradient(top, #7d3e9c, #974db0);
   background: -ms-linear-gradient(top, #7d3e9c, #974db0);
   background: -o-linear-gradient(top, #7d3e9c, #974db0);
-  padding: 7px 15px;
+  padding: 7px 22px;
   margin-bottom: 10px;
   -webkit-border-radius: 6px;
   -moz-border-radius: 6px;
@@ -164,11 +164,38 @@ button[disabled], button[disabled]:hover {
   font-size: 160%;
   text-align: center;
   text-shadow: #2187c8 0 -1px 1px;
+  margin-bottom: -35px;
   font-weight: bold;
   border-radius: 7px;
   float: right;
-  -webkit-transform: rotate(-15deg) scale(1.2) translateX(5%) translateY(5%);
-          transform: rotate(-15deg) scale(1.2) translateX(5%) translateY(5%);
+  -webkit-transform: rotate(-15deg) scale(1) translateX(37%) translateY(-15%);
+          transform: rotate(-15deg) scale(1) translateX(37%) translateY(-15%);
+}
+
+.deleteButton {
+  border-top: 1px solid #f2f5f7;
+  background-color: transparent;
+  padding: 7px 8px;
+  margin-bottom: 10px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+  -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
+  -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
+  box-shadow: rgba(0,0,0,1) 0 1px 0;
+  text-shadow: rgba(0,0,0,.4) 0 1px 0;
+  color: black;
+  font-size: 13px;
+  font-weight: bold;
+  font-family: Helvetica, Arial, Sans-Serif;
+  text-decoration: none;
+  vertical-align: middle;
+  float: right;
+}
+
+.deleteButton:hover {
+   background: lightgray;
+
 }
 
 

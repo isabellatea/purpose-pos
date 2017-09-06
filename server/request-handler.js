@@ -11,8 +11,6 @@ this file and include it in basic-server.js so that it actually works.
 *Hint* Check out the node module documentation at http://nodejs.org/api/modules.html.
 
 **************************************************************/
-// var storage = {};
-// storage.results = [];
 
 const sqlite = require('sqlite3').verbose();
 const db = new sqlite.Database('./sample_data.db', sqlite.OPEN_READWRITE, (err) => {
@@ -33,17 +31,12 @@ var requestHandler = function(request, response) {
   // Documentation for both request and response can be found in the HTTP section at
   // http://nodejs.org/documentation/api/
 
-  // Do some basic logging.
-  //
-  // Adding more logging to your server can be an easy way to get passive
-  // debugging help, but you should always be careful about leaving stray
-  // console.logs in your code.
   console.log('Serving request type ' + request.method + ' for url ' + request.url);
 
   // The outgoing status.
   var statusCode = 200;
 
-  // See the note below about CORS headers.
+
   var defaultCorsHeaders = {
     'access-control-allow-origin': '*',
     'access-control-allow-methods': 'GET, POST, PUT, DELETE, OPTIONS',
@@ -53,7 +46,7 @@ var requestHandler = function(request, response) {
   var headers = defaultCorsHeaders;
 
   // Tell the client we are sending them plain text.
-  //
+
   // You will need to change this if you are sending something
   // other than plain text, like JSON or HTML.
   headers['Content-Type'] = 'application/json';
@@ -116,18 +109,55 @@ var requestHandler = function(request, response) {
           }
         });
 
-        // `INSERT INTO puppies(name, description, img_url, price, status, location, diet) VALUES ('White Walker', 'My fur is white. I like to walk. Why do people look at me strangely when I tell them my name?', 'https://tinyurl.com/y9653oo8', 4, 'available', 4, 4);`
         const postSql = `INSERT INTO puppies (${columns}) VALUES (${actualValues})`;
         db.run(postSql, [], (err) => {
           if (err) {
             console.log('DB error', err);
           } else {
-            console.log('Successfully wrote to DB!!! Yeah!Q!!!!@!!!`~!!!')
+            console.log('Successfully wrote to DB!!! Yeah!!!')
           }
         })
         response.writeHead(201, headers);
-        response.end('Successfully wrote to db??? Eff yeah!');
+        response.end('Successfully wrote to db!!');
       })
+
+    //WIP -- DELETE FROM DATABASE
+    // } else if (request.url === '/deleteitem'){
+    //      // delete data to db
+    //     let body = [];
+    //     request.on('data', function(chunk) {
+    //       console.log("DELETE I'm here", chunk);
+    //       body.push(chunk);
+    //     }).on('end', () => {
+    //         body = Buffer.concat(body).toString();
+    //         const data = JSON.parse(body);
+    //         console.log('Data HERE:', data);
+
+    //     // const columnsTBD = Object.keys(data).join(', ');
+    //     // const valuesTBD = Object.values(data);
+
+    //     let actualValues = '';
+    //     values.forEach((item, idx, coll) => {
+    //       if (typeof item === 'string') {
+    //         actualValues += '"' + item + '"';
+    //           if (idx < coll.length - 1) {
+    //             actualValues += ", ";
+    //           }
+    //       }
+    //     });
+
+    //     const postDeleteSql = `DELETE FROM puppies WHERE name == (${data['name']})`;
+    //     db.run(postSql, [], (err) => {
+    //       if (err) {
+    //         console.log('DB error', err);
+    //       } else {
+    //         console.log('Successfully deleted from DB!!! Yeah!!!')
+    //       }
+    //     })
+    //     response.writeHead(201, headers);
+    //     response.end('Successfully deleted from db!!');
+    //   })
+
     } else {
       response.writeHead(401, headers);
       response.end('401');

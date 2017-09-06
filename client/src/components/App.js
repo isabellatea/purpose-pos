@@ -56,6 +56,29 @@ class App extends Component {
     });
   }
 
+
+  deleteItem = (detailsObject) => {
+    const items = {...this.state.items};
+    for (var key in items) {
+      if (items[key]['name'] === detailsObject['name']) {
+        delete items[key];
+      }
+    }
+    this.setState({items: items})
+    // this.deleteItemFromDb(detailsObject); // delete from db
+  }
+
+  //WIP - DELETE FROM DATABASE
+  // deleteItemFromDb = (detailsObject) => {
+  //   fetch('/deleteItem', {
+  //     method: 'POST',
+  //     body: JSON.stringify(detailsObject)
+  //   })
+  //   .then((response) => {
+  //     console.log(response);
+  //   });
+  // }
+
   payAndUpdate = () => {
     const items = {...this.state.items};
     for (var key in this.state.checkout) {
@@ -101,7 +124,7 @@ class App extends Component {
       <div>
       <Header items={this.state.items} addItem={this.addItem} loadSampleData={this.loadSampleData} restock={this.restock} sortByAvailable={this.sortByAvailable}/>
         <div className="flex-container">
-          <Inventory items={this.state.items} addToCheckout={this.addToCheckout} loadSampleData={this.loadSampleData} addItem={this.addItem}/>
+          <Inventory items={this.state.items} addToCheckout={this.addToCheckout} loadSampleData={this.loadSampleData} addItem={this.addItem} deleteItem={this.deleteItem}/>
           <Checkout items={this.state.checkout} removeFromCheckout={this.removeFromCheckout} payAndUpdate={this.payAndUpdate}/>
         </div>
       </div>

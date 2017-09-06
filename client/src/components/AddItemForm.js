@@ -26,12 +26,13 @@ class AddItemForm extends React.Component {
 			Item Price: <input ref={(input) => this.price = input} type="text" />
 			Description: <textarea ref={(input) => this.description = input}></textarea>
 			Photo URL: <input ref={(input) => this.img_url = input} type="text"/>
-			<button type="submit" className="modalButton" data-dismiss="modal">Add Item</button>
+
 			Status:
 			<select ref={(input) => this.status = input}>
 			  <option value="available">Available</option>
 			  <option value="unavailable">Out of Stock</option>
 			</select>
+			<button type="submit" className="modalButton" data-dismiss="modal">Add Item</button>
 			Location:
 			<select ref={(input) => this.location = input}>
 			  <option value="1">Hall: first, Building: blue</option>
