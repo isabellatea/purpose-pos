@@ -12,6 +12,11 @@ this file and include it in basic-server.js so that it actually works.
 
 **************************************************************/
 
+// Serve static files from a build
+var serveStatic = require('serve-static');
+var finalhandler = require('finalhandler')
+var static = serveStatic(path.join(__dirname, '..', 'client/build'));
+
 const sqlite = require('sqlite3').verbose();
 const db = new sqlite.Database('./sample_data.db', sqlite.OPEN_READWRITE, (err) => {
   if (err) {
@@ -32,6 +37,11 @@ var requestHandler = function(request, response) {
   // http://nodejs.org/documentation/api/
 
   console.log('Serving request type ' + request.method + ' for url ' + request.url);
+
+  // Serve static files in production
+  if (process.env.PRODUCTION) {
+    serve(request, response, finalhandler(request, response));
+  }
 
   // The outgoing status.
   var statusCode = 200;
