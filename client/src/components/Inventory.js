@@ -26,7 +26,7 @@ class Inventory extends React.Component {
 		    <img src='https://openclipart.org/image/2400px/svg_to_png/218242/1430954247.png' alt="addItem" onClick={() => this.modal.show()}/>
 		    <h3 className="item-name"> Add New Item </h3>
 		    <SkyLight dialogStyles={modalStyle} hideOnOverlayClicked ref={(modal) => this.modal = modal}>
-          	  <AddItemForm addItem={this.props.addItem} addItem={this.props.addItem} modal={this.hideModal}/>
+          	  <AddItemForm addItem={this.props.addItem} modal={this.hideModal}/>
        		</SkyLight>
 		  </li>
 
