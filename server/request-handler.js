@@ -14,8 +14,8 @@ this file and include it in basic-server.js so that it actually works.
 
 // Serve static files from a build
 var serveStatic = require('serve-static');
-var finalhandler = require('finalhandler')
-var static = serveStatic(path.join(__dirname, '..', 'client/build'));
+var path = require('path');
+var fs = require('fs');
 
 const sqlite = require('sqlite3').verbose();
 const db = new sqlite.Database('./sample_data.db', sqlite.OPEN_READWRITE, (err) => {
@@ -40,7 +40,9 @@ var requestHandler = function(request, response) {
 
   // Serve static files in production
   if (process.env.PRODUCTION) {
-    serve(request, response, finalhandler(request, response));
+    var filepath = path.join(__dirname, '..', 'client/build');
+    var static = serveStatic(filepath);
+    static(request, response, () => {});
   }
 
   // The outgoing status.
@@ -91,9 +93,6 @@ var requestHandler = function(request, response) {
     if (request.url === '/getAll') {
       console.log("GETting all puppies");
       getAllPuppies();
-    } else {
-      response.writeHead(404, headers);
-      response.end('404');
     }
   } else if (request.method === 'POST') {
     if (request.url === '/addItem') {

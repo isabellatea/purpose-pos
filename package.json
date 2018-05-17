@@ -4,7 +4,8 @@
   "description": "This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "concurrently \"npm run server\" \"npm run client\"",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "start": "PRODUCTION=true node ./server/basic-server.js",
     "server": "nodemon ./server/basic-server.js --ignore client/",
     "client": "node ./start-client.js"
   },
