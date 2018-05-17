@@ -11,6 +11,13 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "flex.box": "^3.4.3",
+    "materialize-css": "^0.100.2",
+    "react": "^15.6.1",
+    "react-bootstrap": "^0.31.2",
+    "react-dom": "^15.6.1",
+    "react-scripts": "1.0.11",
+    "react-skylight": "^0.4.2",
     "body-parser": "^1.17.2",
     "concurrently": "^3.5.0",
     "nodemon": "^1.12.0",
