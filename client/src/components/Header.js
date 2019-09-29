@@ -16,7 +16,7 @@ class Header extends React.Component {
 	return (
         <div className="header">        
           <ul>
-          <li><img src='http://i63.tinypic.com/x5nyo2.png' alt='purposePOS' /></li>
+          <li><img src='/images/purposePOS4.png' alt='purposePOS' /></li>
           <li className="navitem"> <textarea></textarea></li> 
           <li className="navitem search">Search: </li>
           <li className="navitem" onClick={this.props.restock}> Restock </li>

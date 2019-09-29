@@ -17,8 +17,7 @@ class Inventory extends React.Component {
       height: 'auto'
     };
 	return (
-	  <div className="inventory">
-	    <ul>
+	    <ul className="inventory">
 	      {Object.keys(this.props.items)
 	        .map(key => <Item key={key} index={key} details={this.props.items[key]} addToCheckout={this.props.addToCheckout} deleteItem={this.props.deleteItem} />)} 
 	              
@@ -26,12 +25,11 @@ class Inventory extends React.Component {
 		    <img src='https://openclipart.org/image/2400px/svg_to_png/218242/1430954247.png' alt="addItem" onClick={() => this.modal.show()}/>
 		    <h3 className="item-name"> Add New Item </h3>
 		    <SkyLight dialogStyles={modalStyle} hideOnOverlayClicked ref={(modal) => this.modal = modal}>
-          	  <AddItemForm addItem={this.props.addItem} modal={this.hideModal}/>
-       		</SkyLight>
+	      	  <AddItemForm addItem={this.props.addItem} modal={this.hideModal}/>
+	   		</SkyLight>
 		  </li>
 
 	    </ul>
-      </div>
 	)
   }
 }

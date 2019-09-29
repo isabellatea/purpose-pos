@@ -123,7 +123,7 @@ class App extends Component {
     return (
       <div>
       <Header items={this.state.items} addItem={this.addItem} loadSampleData={this.loadSampleData} restock={this.restock} sortByAvailable={this.sortByAvailable}/>
-        <div className="flex-container">
+        <div className="content-container">
           <Inventory items={this.state.items} addToCheckout={this.addToCheckout} loadSampleData={this.loadSampleData} addItem={this.addItem} deleteItem={this.deleteItem}/>
           <Checkout items={this.state.checkout} removeFromCheckout={this.removeFromCheckout} payAndUpdate={this.payAndUpdate}/>
         </div>
