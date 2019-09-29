@@ -7,7 +7,8 @@
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "start": "PRODUCTION=true node ./server/basic-server.js",
     "server": "nodemon ./server/basic-server.js --ignore client/",
-    "client": "node ./start-client.js"
+    "client": "node ./start-client.js start",
+    "build": "node ./start-client.js build"
   },
   "author": "",
   "license": "ISC",
