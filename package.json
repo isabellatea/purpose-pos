@@ -2,6 +2,10 @@
   "name": "mvp3-server",
   "version": "1.0.0",
   "description": "This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).",
+  "engines": {
+    "node": "8.2.1",
+    "npm": "5.3.0"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
