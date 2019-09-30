@@ -13,7 +13,7 @@ A clean and simple point of sale / intventory management app.
 ## Link and Screenshot
 Link: https://purpose-pos.herokuapp.com/
 
-![PurposePOSHomepage](https://i.ibb.co/f0g3xM4/Screen-Shot-2019-09-30-at-2-57-26-PM.png)
+![PurposePOSHomepage](https://i.ibb.co/wZqxcZS/pp.jpg)
 
 ## Development
 
